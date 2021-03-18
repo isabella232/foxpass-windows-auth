@@ -128,17 +128,17 @@ Section ; Run installer script
   ExecWait '"$INSTDIR\Foxpass.InstallUtil.exe" post-install'
 SectionEnd
 
-Section 
+Section  
 CreateShortcut "$DESKTOP\Foxpass.Windows.Auth.lnk" "$INSTDIR\Foxpass.Windows.Auth.exe"
 SectionEnd
 
-Section "un.pGina" ; Uninstall pGina
+Section "un.FoxpassWindowsAuth" ; Uninstall pGina
   ${If} ${RunningX64}
     SetRegView 64
   ${EndIf}
 
   SetOutPath $INSTDIR
-  ExecWait '"$INSTDIR\FoxpassWindowsAuth.InstallUtil.exe" post-uninstall'
+  ExecWait '"$INSTDIR\Foxpass.InstallUtil.exe" post-uninstall'
   Delete $INSTDIR\*.exe
   Delete $INSTDIR\*.dll
   Delete $INSTDIR\log4net.xml
@@ -165,11 +165,11 @@ Section "un.pGina" ; Uninstall pGina
   RmDir $INSTDIR\x64
 SectionEnd
 
-Section "un.Delete pGina configuration"
+Section "un.Delete FoxpassWindowsAuth configuration"
   DeleteRegKey HKLM "SOFTWARE\FoxpassWindowsAuth"
 SectionEnd
 
-Section "un.Delete pGina logs"
+Section "un.Delete FoxpassWindowsAuth logs"
   Delete $INSTDIR\log\*.txt
   RmDir $INSTDIR\log
 SectionEnd

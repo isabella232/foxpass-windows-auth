@@ -187,11 +187,13 @@ namespace pGina.Core
             //m_logger.DebugFormat("Loading plugins from {0}", dir);
 
           //Drupal Path Hardcoded
-            string file = dir + "\\Foxpass.Plugin.LDAP.dll";
-            //foreach (string file in files)
-            //{
+           // string file = dir + "\\Foxpass.Plugin.LDAP.dll";
 
-                try
+            string[] files = Directory.GetFiles(dir, "*.Plugin.*.dll");
+            foreach (string file in files)
+            {
+
+            try
                 {
                     // Load the assembly up
                     Assembly assembly = Assembly.LoadFile(file);
@@ -219,7 +221,7 @@ namespace pGina.Core
                 {
                     //m_logger.ErrorFormat("Error loading {0}: {1}", file, ex);
                 }
-            //}
+            }
         }
 
         /// <summary>
@@ -276,6 +278,60 @@ namespace pGina.Core
 
             return LdapGuid;
         }
+
+
+        public static string GetLMGUID(string dir)
+        {
+            string LocalMachineGuid = null;
+
+
+            if (!Directory.Exists(dir))
+            {
+                //m_logger.WarnFormat("Skipping invalid plugin directory: {0}", dir);
+                return null;
+            }
+
+            //m_logger.DebugFormat("Loading plugins from {0}", dir);
+
+            //Drupal Path Hardcoded
+            string file = dir + "\\Foxpass.Plugin.LocalMachine.dll";
+            //foreach (string file in files)
+            //{
+
+            try
+            {
+                // Load the assembly up
+                Assembly assembly = Assembly.LoadFile(file);
+
+                foreach (Type type in assembly.GetTypes())
+                {
+                    // Make sure its a public class
+                    if (!type.IsClass || type.IsNotPublic)
+                        continue;
+
+                    Type[] interfaces = type.GetInterfaces();
+                    if (interfaces.Contains(typeof(IPluginBase)))
+                    {
+                        // TBD: We could do inverted control here.. logger, settings, etc?
+                        //  We could also consider loading plugins in their own app domain,
+                        //  making them unloadable...
+                        object pluginObject = Activator.CreateInstance(type);
+                        IPluginBase pluginBase = pluginObject as IPluginBase;
+                        LocalMachineGuid = pluginBase.Uuid.ToString();
+                        //m_logger.DebugFormat("Created plugin object type: {0} from plugin: {1} uuid: {2}", type.ToString(), file, pluginBase.Uuid);              
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //m_logger.ErrorFormat("Error loading {0}: {1}", file, ex);
+            }
+
+            return LocalMachineGuid;
+        }
+
+
+
 
 
         public static List<IPluginBase> AllPlugins

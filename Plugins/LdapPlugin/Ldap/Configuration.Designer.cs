@@ -43,7 +43,6 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.timeoutLabel = new System.Windows.Forms.Label();
 			this.timeoutTextBox = new System.Windows.Forms.TextBox();
-			this.searchDnTextBox = new System.Windows.Forms.TextBox();
 			this.authzRequireAuthCB = new System.Windows.Forms.CheckBox();
 			this.authzAllowOnErrorCB = new System.Windows.Forms.CheckBox();
 			this.sslCertFileTextBox = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@
 			this.dnPatternLabel = new System.Windows.Forms.Label();
 			this.searchForDnCheckBox = new System.Windows.Forms.CheckBox();
 			this.useTlsCheckBox = new System.Windows.Forms.CheckBox();
+			this.searchDnTextBox = new System.Windows.Forms.TextBox();
 			this.ldapServerGroupBox = new System.Windows.Forms.GroupBox();
 			this.showPwCB = new System.Windows.Forms.CheckBox();
 			this.searchPassTextBox = new System.Windows.Forms.TextBox();
@@ -247,13 +247,6 @@
         "g on to the next server in the list.\r\n");
 			this.timeoutTextBox.Visible = false;
 			// 
-			// searchDnTextBox
-			// 
-			this.searchDnTextBox.Location = new System.Drawing.Point(110, 49);
-			this.searchDnTextBox.Name = "searchDnTextBox";
-			this.searchDnTextBox.Size = new System.Drawing.Size(296, 20);
-			this.searchDnTextBox.TabIndex = 13;
-			// 
 			// authzRequireAuthCB
 			// 
 			this.authzRequireAuthCB.AutoSize = true;
@@ -367,6 +360,13 @@
 			this.useTlsCheckBox.UseVisualStyleBackColor = true;
 			this.useTlsCheckBox.Visible = false;
 			this.useTlsCheckBox.CheckedChanged += new System.EventHandler(this.useTlsCheckBox_CheckedChanged);
+			// 
+			// searchDnTextBox
+			// 
+			this.searchDnTextBox.Location = new System.Drawing.Point(110, 49);
+			this.searchDnTextBox.Name = "searchDnTextBox";
+			this.searchDnTextBox.Size = new System.Drawing.Size(296, 20);
+			this.searchDnTextBox.TabIndex = 13;
 			// 
 			// ldapServerGroupBox
 			// 
@@ -910,6 +910,7 @@
 			this.Controls.Add(this.sslCertFileTextBox);
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MaximizeBox = false;
 			this.Name = "Configuration";
 			this.Text = "LDAP Plugin Settings";
 			this.ldapServerGroupBox.ResumeLayout(false);

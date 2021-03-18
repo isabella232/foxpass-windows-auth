@@ -59,7 +59,7 @@ namespace pGina.CredentialProvider.Registration
             catch (Exception e)
             {
                 //m_logger.ErrorFormat("{0}" + Environment.NewLine + Environment.NewLine + "{1}",
-                  //  e.Message, UsageText());
+                //  e.Message, UsageText());
                 return 1;
             }
 

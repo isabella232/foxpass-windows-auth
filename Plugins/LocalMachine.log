@@ -1,0 +1,6 @@
+1>------ Rebuild All started: Project: LocalMachine, Configuration: Release Any CPU ------
+
+Package 'Code Analysis Package' failed to load.
+1>  LocalMachine -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\Plugins\bin\Foxpass.Plugin.LocalMachine.dll
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
+

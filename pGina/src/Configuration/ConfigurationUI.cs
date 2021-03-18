@@ -857,12 +857,12 @@ namespace pGina.Configuration
                 {
                     IPluginBase p = m_plugins[(string)row.Cells[PLUGIN_UUID_COLUMN].Value];
                     int mask = 0;
-
-                    if (Convert.ToBoolean(row.Cells[AUTHENTICATION_COLUMN].Value))
+                    //drupal
+                    //if (Convert.ToBoolean(row.Cells[AUTHENTICATION_COLUMN].Value))
                         mask |= (int)Core.PluginLoader.State.AuthenticateEnabled;
-                    if (Convert.ToBoolean(row.Cells[AUTHORIZATION_COLUMN].Value))
+                    //if (Convert.ToBoolean(row.Cells[AUTHORIZATION_COLUMN].Value))
                         mask |= (int)Core.PluginLoader.State.AuthorizeEnabled;
-                    if (Convert.ToBoolean(row.Cells[GATEWAY_COLUMN].Value))
+                    //if (Convert.ToBoolean(row.Cells[GATEWAY_COLUMN].Value))
                         mask |= (int)Core.PluginLoader.State.GatewayEnabled;
                     if (Convert.ToBoolean(row.Cells[NOTIFICATION_COLUMN].Value))
                         mask |= (int)Core.PluginLoader.State.NotificationEnabled;
@@ -928,10 +928,10 @@ namespace pGina.Configuration
 
         private bool SaveSettings()
         {
-            //Drupal
-            //if (!this.CheckPluginSettings())
-            //    return false;
-            this.SavePluginSettings();
+			//Drupal
+			//if (!this.CheckPluginSettings())
+			//	return false;
+			this.SavePluginSettings();
             this.SavePluginDirs();
             this.SavePluginOrder();
 
@@ -1067,7 +1067,18 @@ namespace pGina.Configuration
 				IPluginConfiguration configPlugin = plug as IPluginConfiguration;
 				configPlugin.Configure();
 			}
-		}
+
+            //Drupal UID selection code brought here
+            string pluginUuid1 = PluginLoader.GetLMGUID(PluginLoader.PluginDirectories[0]);
+            IPluginBase plug1 = this.m_plugins[pluginUuid1];
+
+            if (plug1 is IPluginConfiguration)
+            {
+                IPluginConfiguration configPlugin = plug1 as IPluginConfiguration;
+                configPlugin.Configure();
+            }
+
+        }
 
 		private void simMethodChanged(object sender, EventArgs e)
         {
