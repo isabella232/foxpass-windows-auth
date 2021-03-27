@@ -77,10 +77,14 @@ namespace pGina.Plugin.Ldap
             m_settings.SetDefault("AuthzDefault", true);
 
             // Gateway
+            //List<string> strList = new List<string>();
+            //strList.Add("2\t0\t\t\tS-1-5-32-544");
+            //Settings.Store.GroupGatewayRules = strList.ToArray();
+
             List<string> strList = new List<string>();
-            strList.Add("2\t0\t\t\tS - 1 - 5 - 32 - 544");
+            strList.Add("0\t0\tcn=Windows-Administrators,ou=groups,dc=foxpass,dc=com\t(&(member=uid=%u,ou=people,dc=foxpass,dc=com))\tS-1-5-32-544");
             Settings.Store.GroupGatewayRules = strList.ToArray();
-           // m_settings.SetDefault("GroupGatewayRules", new string[] { });
+            // m_settings.SetDefault("GroupGatewayRules", new string[] { });
 
             // Change password
             m_settings.SetDefault("ChangePasswordAttributes", new string[] { });

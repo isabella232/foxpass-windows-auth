@@ -10,11 +10,13 @@
 
 !define APPNAME "Foxpass Windows Auth"
 !define VERSION "1.0.0.1"
+!define MyAppPublisher "Foxpass Inc"
 
 RequestExecutionLevel admin  ; Require admin rights
 
 Name "${APPNAME} - ${VERSION}"   ; Name in title bar
 OutFile "${APPNAME}-${VERSION}-setup.exe" ; Output file
+Publisher "${MyAppPublisher}" ;
 
 # UI configuration
 !define MUI_ABORTWARNING

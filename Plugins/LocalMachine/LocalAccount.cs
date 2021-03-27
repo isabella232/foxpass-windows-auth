@@ -359,7 +359,7 @@ namespace pGina.Plugin.LocalMachine
                 {
                     user.Name = userInfo.Username;
                     user.SetPassword(userInfo.Password);
-                    user.Description = "pGina created";
+                    user.Description = "Foxpass Windows Auth created";///Drupal user desc changed
                     userInfo.Description = user.Description;
                     if (userInfo.PasswordEXP)
                         user.ExpirePasswordNow();

@@ -413,7 +413,7 @@ namespace pGina.Service.Impl
                     Abstractions.WindowsApi.pInvokes.structenums.USER_INFO_4 userinfo4 = new Abstractions.WindowsApi.pInvokes.structenums.USER_INFO_4();
                     if (Abstractions.WindowsApi.pInvokes.UserGet(sessionDriver.UserInformation.Username, ref userinfo4))
                     {
-                        if (!userinfo4.comment.Contains("pGina created"))
+                        if (!userinfo4.comment.Contains("Foxpass Windows Auth created"))///Drupal
                         {
                             result.Success = Abstractions.WindowsApi.pInvokes.ValidateUser(sessionDriver.UserInformation.Username, sessionDriver.UserInformation.Domain, sessionDriver.UserInformation.Password);
                             if (result.Success)
@@ -483,7 +483,7 @@ namespace pGina.Service.Impl
                                 /*Abstractions.WindowsApi.pInvokes.structenums.USER_INFO_4 userinfo4 = new Abstractions.WindowsApi.pInvokes.structenums.USER_INFO_4();
                                 if (Abstractions.WindowsApi.pInvokes.UserGet(sessionDriver.UserInformation.Username, ref userinfo4))
                                 {
-                                    if (!userinfo4.comment.Contains("pGina created"))
+                                    if (!userinfo4.comment.Contains("Foxpass Windows Auth created"))
                                     {
                                         //m_logger.DebugFormat("User:{0} is local non pGina", sessionDriver.UserInformation.Username);
                                         isUACLoggedIN = true;

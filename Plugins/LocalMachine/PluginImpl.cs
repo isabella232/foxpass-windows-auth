@@ -209,9 +209,9 @@ namespace pGina.Plugin.LocalMachine
             Abstractions.WindowsApi.pInvokes.structenums.USER_INFO_4 userinfo4 = new Abstractions.WindowsApi.pInvokes.structenums.USER_INFO_4();
             if (Abstractions.WindowsApi.pInvokes.UserGet(userInfo.Username, ref userinfo4)) //true if user exists
             {
-                if (!userinfo4.comment.Contains("pGina created"))
+                if (!userinfo4.comment.Contains("Foxpass Windows Auth created"))///Drupal
                 {
-                    m_logger.InfoFormat("User {0} is'nt a pGina created user. I'm not executing Gateway stage", userInfo.Username);
+                    m_logger.InfoFormat("User {0} is'nt a Foxpass Windows Auth created user. I'm not executing Gateway stage", userInfo.Username);
                     return new BooleanResult() { Success = true };
                 }
             }
@@ -507,8 +507,8 @@ namespace pGina.Plugin.LocalMachine
             {
                 UserInformation uInfo = properties.GetTrackedSingle<UserInformation>();
                 m_logger.DebugFormat("{1} SessionChange SessionLogoff for ID:{0}", SessionId, uInfo.Username);
-                m_logger.InfoFormat("{3} {0} {1} {2}", uInfo.Description.Contains("pGina created"), uInfo.HasSID, properties.CREDUI, uInfo.Username);
-                if (uInfo.Description.Contains("pGina created") && uInfo.HasSID && !properties.CREDUI)
+                m_logger.InfoFormat("{3} {0} {1} {2}", uInfo.Description.Contains("Foxpass Windows Auth created"), uInfo.HasSID, properties.CREDUI, uInfo.Username);
+                if (uInfo.Description.Contains("Foxpass Windows Auth created") && uInfo.HasSID && !properties.CREDUI)
                 {
                     try
                     {
@@ -541,7 +541,7 @@ namespace pGina.Plugin.LocalMachine
                 }
                 else
                 {
-                    m_logger.InfoFormat("{0} {1}. I'm not executing Notification stage", uInfo.Username, (properties.CREDUI) ? "has a program running in his context" : "is'nt a pGina created user");
+                    m_logger.InfoFormat("{0} {1}. I'm not executing Notification stage", uInfo.Username, (properties.CREDUI) ? "has a program running in his context" : "is'nt a Foxpass Windows Auth created user");
                 }
             }
             if (Reason == System.ServiceProcess.SessionChangeReason.SessionLogon)
@@ -555,7 +555,7 @@ namespace pGina.Plugin.LocalMachine
 
                 m_logger.DebugFormat("{1} SessionChange SessionLogon for ID:{0}", SessionId, userInfo.Username);
 
-                if (userInfo.Description.Contains("pGina created"))
+                if (userInfo.Description.Contains("Foxpass Windows Auth created"))///Drupal
                 {
                     if (!userInfo.Description.Contains("pgSMB"))
                     {
@@ -617,7 +617,7 @@ namespace pGina.Plugin.LocalMachine
                 }
                 else
                 {
-                    m_logger.InfoFormat("{0} {1}. I'm not executing Notification stage", userInfo.Username, (userInfo.Description.Contains("pgSMB")) ? "was created by pgSMB" : "is'nt a pGina created user");
+                    m_logger.InfoFormat("{0} {1}. I'm not executing Notification stage", userInfo.Username, (userInfo.Description.Contains("pgSMB")) ? "was created by pgSMB" : "is'nt a Foxpass Windows Auth created user");
                 }
             }
         }

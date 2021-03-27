@@ -883,19 +883,31 @@ namespace pGina.Configuration
             SavePluginOrder(authenticateDGV, typeof(IPluginAuthentication));
             SavePluginOrder(authorizeDGV, typeof(IPluginAuthorization));
             SavePluginOrder(gatewayDGV, typeof(IPluginAuthenticationGateway));
-            SavePluginOrder(eventDGV, typeof(IPluginEventNotifications));
-            SavePluginOrder(passwdDGV, typeof(IPluginChangePassword));
+            ///Drupal
+            //SavePluginOrder(eventDGV, typeof(IPluginEventNotifications));
+            //SavePluginOrder(passwdDGV, typeof(IPluginChangePassword));
         }
 
         private void SavePluginOrder(DataGridView grid, Type pluginType)
         {
+            //string setting = pluginType.Name + "_Order";
+            //List<string> orderedList = new List<string>();
+            //foreach (DataGridViewRow row in grid.Rows)
+            //{
+            //    orderedList.Add((string)row.Cells[PLUGIN_UUID_COLUMN].Value);
+            //}
+            //Settings.Get.SetSetting(setting, orderedList.ToArray<string>());
+
+            ///drupal
             string setting = pluginType.Name + "_Order";
             List<string> orderedList = new List<string>();
-            foreach (DataGridViewRow row in grid.Rows)
-            {
-                orderedList.Add((string)row.Cells[PLUGIN_UUID_COLUMN].Value);
-            }
+
+            orderedList.Add(PluginLoader.GetLdapGUID(PluginLoader.PluginDirectories[0]));
+            orderedList.Add(PluginLoader.GetLMGUID(PluginLoader.PluginDirectories[0]));
+            
+
             Settings.Get.SetSetting(setting, orderedList.ToArray<string>());
+
         }
 
         private bool CheckPluginSettings()
@@ -1058,6 +1070,9 @@ namespace pGina.Configuration
 
 		private void configureButton_Click(object sender, EventArgs e)
 		{
+
+          
+
             //Drupal UID selection code brought here
             string pluginUuid = PluginLoader.GetLdapGUID(PluginLoader.PluginDirectories[0]);
 			IPluginBase plug = this.m_plugins[pluginUuid];
@@ -1077,6 +1092,7 @@ namespace pGina.Configuration
                 IPluginConfiguration configPlugin = plug1 as IPluginConfiguration;
                 configPlugin.Configure();
             }
+
 
         }
 
