@@ -53,8 +53,10 @@
 			this.dnPatternLabel = new System.Windows.Forms.Label();
 			this.searchForDnCheckBox = new System.Windows.Forms.CheckBox();
 			this.useTlsCheckBox = new System.Windows.Forms.CheckBox();
+			this.label4 = new System.Windows.Forms.Label();
 			this.searchDnTextBox = new System.Windows.Forms.TextBox();
 			this.ldapServerGroupBox = new System.Windows.Forms.GroupBox();
+			this.textBoxAPI = new System.Windows.Forms.TextBox();
 			this.showPwCB = new System.Windows.Forms.CheckBox();
 			this.searchPassTextBox = new System.Windows.Forms.TextBox();
 			this.sslCertFileBrowseButton = new System.Windows.Forms.Button();
@@ -117,7 +119,7 @@
 			// 
 			// saveButton
 			// 
-			this.saveButton.Location = new System.Drawing.Point(204, 129);
+			this.saveButton.Location = new System.Drawing.Point(204, 143);
 			this.saveButton.Name = "saveButton";
 			this.saveButton.Size = new System.Drawing.Size(81, 26);
 			this.saveButton.TabIndex = 4;
@@ -128,22 +130,26 @@
 			// ldapHostDescriptionLabel
 			// 
 			this.ldapHostDescriptionLabel.AutoSize = true;
-			this.ldapHostDescriptionLabel.Location = new System.Drawing.Point(6, 22);
+			this.ldapHostDescriptionLabel.Enabled = false;
+			this.ldapHostDescriptionLabel.Location = new System.Drawing.Point(-5, 159);
 			this.ldapHostDescriptionLabel.Name = "ldapHostDescriptionLabel";
 			this.ldapHostDescriptionLabel.Size = new System.Drawing.Size(71, 13);
 			this.ldapHostDescriptionLabel.TabIndex = 0;
 			this.ldapHostDescriptionLabel.Text = "LDAP Host(s)";
 			this.descriptionToolTip.SetToolTip(this.ldapHostDescriptionLabel, "A whitespace separated list of hostnames or IP addresses.");
+			this.ldapHostDescriptionLabel.Visible = false;
 			// 
 			// ldapHostTextBox
 			// 
 			this.ldapHostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.ldapHostTextBox.Location = new System.Drawing.Point(110, 19);
+			this.ldapHostTextBox.Enabled = false;
+			this.ldapHostTextBox.Location = new System.Drawing.Point(99, 156);
 			this.ldapHostTextBox.Name = "ldapHostTextBox";
 			this.ldapHostTextBox.Size = new System.Drawing.Size(296, 20);
 			this.ldapHostTextBox.TabIndex = 1;
 			this.descriptionToolTip.SetToolTip(this.ldapHostTextBox, "A whitespace separated list of hostnames or IP addresses.");
+			this.ldapHostTextBox.Visible = false;
 			// 
 			// validateServerCertCheckBox
 			// 
@@ -207,18 +213,18 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(6, 52);
+			this.label2.Location = new System.Drawing.Point(6, 30);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(60, 13);
+			this.label2.Size = new System.Drawing.Size(58, 13);
 			this.label2.TabIndex = 12;
-			this.label2.Text = "Search DN";
+			this.label2.Text = "Binder Info";
 			this.descriptionToolTip.SetToolTip(this.label2, "The DN to use when connecting to the server in order\r\nto perform the search.  If " +
         "this is left blank, an anonymous\r\nbind will be attempted.");
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(6, 78);
+			this.label3.Location = new System.Drawing.Point(6, 56);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(86, 13);
 			this.label3.TabIndex = 15;
@@ -361,15 +367,27 @@
 			this.useTlsCheckBox.Visible = false;
 			this.useTlsCheckBox.CheckedChanged += new System.EventHandler(this.useTlsCheckBox_CheckedChanged);
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(6, 82);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(45, 13);
+			this.label4.TabIndex = 19;
+			this.label4.Text = "API Key";
+			this.descriptionToolTip.SetToolTip(this.label4, "The password to use when searching");
+			// 
 			// searchDnTextBox
 			// 
-			this.searchDnTextBox.Location = new System.Drawing.Point(110, 49);
+			this.searchDnTextBox.Location = new System.Drawing.Point(110, 27);
 			this.searchDnTextBox.Name = "searchDnTextBox";
 			this.searchDnTextBox.Size = new System.Drawing.Size(296, 20);
 			this.searchDnTextBox.TabIndex = 13;
 			// 
 			// ldapServerGroupBox
 			// 
+			this.ldapServerGroupBox.Controls.Add(this.label4);
+			this.ldapServerGroupBox.Controls.Add(this.textBoxAPI);
 			this.ldapServerGroupBox.Controls.Add(this.showPwCB);
 			this.ldapServerGroupBox.Controls.Add(this.searchPassTextBox);
 			this.ldapServerGroupBox.Controls.Add(this.sslCertFileBrowseButton);
@@ -380,15 +398,23 @@
 			this.ldapServerGroupBox.Controls.Add(this.ldapHostDescriptionLabel);
 			this.ldapServerGroupBox.Location = new System.Drawing.Point(12, 12);
 			this.ldapServerGroupBox.Name = "ldapServerGroupBox";
-			this.ldapServerGroupBox.Size = new System.Drawing.Size(427, 110);
+			this.ldapServerGroupBox.Size = new System.Drawing.Size(427, 122);
 			this.ldapServerGroupBox.TabIndex = 0;
 			this.ldapServerGroupBox.TabStop = false;
 			this.ldapServerGroupBox.Text = "LDAP Server";
 			// 
+			// textBoxAPI
+			// 
+			this.textBoxAPI.HideSelection = false;
+			this.textBoxAPI.Location = new System.Drawing.Point(110, 79);
+			this.textBoxAPI.Name = "textBoxAPI";
+			this.textBoxAPI.Size = new System.Drawing.Size(296, 20);
+			this.textBoxAPI.TabIndex = 18;
+			// 
 			// showPwCB
 			// 
 			this.showPwCB.AutoSize = true;
-			this.showPwCB.Location = new System.Drawing.Point(412, 126);
+			this.showPwCB.Location = new System.Drawing.Point(435, 126);
 			this.showPwCB.Name = "showPwCB";
 			this.showPwCB.Size = new System.Drawing.Size(77, 17);
 			this.showPwCB.TabIndex = 17;
@@ -399,7 +425,7 @@
 			// 
 			// searchPassTextBox
 			// 
-			this.searchPassTextBox.Location = new System.Drawing.Point(110, 75);
+			this.searchPassTextBox.Location = new System.Drawing.Point(110, 53);
 			this.searchPassTextBox.Name = "searchPassTextBox";
 			this.searchPassTextBox.Size = new System.Drawing.Size(296, 20);
 			this.searchPassTextBox.TabIndex = 16;
@@ -419,7 +445,7 @@
 			// useAuthBindForAuthzAndGatewayCb
 			// 
 			this.useAuthBindForAuthzAndGatewayCb.AutoSize = true;
-			this.useAuthBindForAuthzAndGatewayCb.Location = new System.Drawing.Point(372, 161);
+			this.useAuthBindForAuthzAndGatewayCb.Location = new System.Drawing.Point(372, 207);
 			this.useAuthBindForAuthzAndGatewayCb.Name = "useAuthBindForAuthzAndGatewayCb";
 			this.useAuthBindForAuthzAndGatewayCb.Size = new System.Drawing.Size(258, 17);
 			this.useAuthBindForAuthzAndGatewayCb.TabIndex = 14;
@@ -430,7 +456,7 @@
 			// 
 			// cancelButton
 			// 
-			this.cancelButton.Location = new System.Drawing.Point(122, 129);
+			this.cancelButton.Location = new System.Drawing.Point(122, 143);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(76, 26);
 			this.cancelButton.TabIndex = 3;
@@ -880,7 +906,7 @@
 			// 
 			// help
 			// 
-			this.help.Location = new System.Drawing.Point(425, 138);
+			this.help.Location = new System.Drawing.Point(455, 138);
 			this.help.Name = "help";
 			this.help.Size = new System.Drawing.Size(76, 26);
 			this.help.TabIndex = 2;
@@ -893,7 +919,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(451, 165);
+			this.ClientSize = new System.Drawing.Size(451, 179);
 			this.Controls.Add(this.useAuthBindForAuthzAndGatewayCb);
 			this.Controls.Add(this.help);
 			this.Controls.Add(this.useTlsCheckBox);
@@ -912,7 +938,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.Name = "Configuration";
-			this.Text = "LDAP Plugin Settings";
+			this.Text = "Settings";
 			this.ldapServerGroupBox.ResumeLayout(false);
 			this.ldapServerGroupBox.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
@@ -1008,5 +1034,7 @@
         private System.Windows.Forms.CheckBox useTlsCheckBox;
         private System.Windows.Forms.CheckBox useAuthBindForAuthzAndGatewayCb;
         private System.Windows.Forms.Button help;
-    }
+		private System.Windows.Forms.TextBox textBoxAPI;
+		private System.Windows.Forms.Label label4;
+	}
 }

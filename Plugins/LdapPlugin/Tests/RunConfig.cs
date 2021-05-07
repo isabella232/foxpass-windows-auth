@@ -49,7 +49,11 @@ namespace pGina.Plugin.Ldap.Tests
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pGina.Plugin.Ldap.Configuration());
-        }
-    }
+			//Application.Run(new pGina.Plugin.Ldap.Configuration());
+
+			pGina.Plugin.Ldap.LdapServer test = new pGina.Plugin.Ldap.LdapServer();
+			test.AuthenticateViaAPI("drupal", "DESKTOP-K9ILL6O");
+			//test.AuthenticateViaAPI("danish", "DANISH");
+		}
+	}
 }

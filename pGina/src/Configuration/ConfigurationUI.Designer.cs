@@ -250,7 +250,7 @@
 			this.Configure_Ldap.Name = "Configure_Ldap";
 			this.Configure_Ldap.Size = new System.Drawing.Size(118, 32);
 			this.Configure_Ldap.TabIndex = 8;
-			this.Configure_Ldap.Text = "Configure LDAP";
+			this.Configure_Ldap.Text = "Settings";
 			this.Configure_Ldap.UseVisualStyleBackColor = true;
 			this.Configure_Ldap.Click += new System.EventHandler(this.configureButton_Click);
 			// 

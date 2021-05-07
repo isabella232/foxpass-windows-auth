@@ -24,24 +24,41 @@
 	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Reflection;
 using System.DirectoryServices.Protocols;
 using System.Security.Cryptography.X509Certificates;
 using System.Net;
-using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 
 using pGina.Shared.Types;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace pGina.Plugin.Ldap
 {
+	public class resource1
+    {
+        public string hostname { get; set; }
+    };
+
+    public class body
+    {
+        public string username { get; set; }
+        public resource1 resource { get; set; }
+    };
+
+    public class response
+    {
+        public string status { get; set; }
+        public string access { get; set; }
+    };
     public class LdapServer : IDisposable
     {
       //  private log4net.ILog //m_logger = log4net.LogManager.GetLogger("LdapServer");
@@ -514,6 +531,15 @@ namespace pGina.Plugin.Ldap
         {
             // Check for empty password.  If configured to do so, we fail on
             // empty passwords.
+            string HostName = Dns.GetHostName();
+ 
+
+            if (!(AuthenticateViaAPI(uname, HostName).Success))
+            {
+                return new BooleanResult { Success = false, Message = "User is not having access" };
+            }
+
+
             bool allowEmpty = Settings.Store.AllowEmptyPasswords;
             if (!allowEmpty && string.IsNullOrEmpty(password))
             {
@@ -1056,5 +1082,63 @@ namespace pGina.Plugin.Ldap
             }
             return true;
         }
+
+        /// <summary>
+        /// Call API to LDAP server to check user has access to the host from which they are connecting
+        /// </summary>
+        /// <returns></returns>
+        public BooleanResult AuthenticateViaAPI(string userName, string hostName)
+        {
+           // string hostUri = m_hostname[0].Remove(0, 5);
+            string hostUri= Settings.Store.ApiHostUri;
+
+            string API_KEY = Settings.Store.textBoxAPI;
+
+            HttpClient client = new HttpClient();
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+            //client.BaseAddress = new Uri("https://"+ hostUri);
+
+            client.BaseAddress = new Uri(hostUri);
+
+            string rest = "/v1/authz/";
+
+            if (hostUri.Contains("foxtest"))
+            {
+                rest = "/api/v1/authz/";
+            }
+          
+                client.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("AUTHORIZATION", "Token "+ API_KEY);
+
+            body obj_body = new body();
+            obj_body.resource = new resource1();
+
+            obj_body.username = userName;
+            obj_body.resource.hostname = hostName;
+
+            var myContent = JsonConvert.SerializeObject(obj_body);
+            StringContent httpContent = new StringContent(myContent, System.Text.Encoding.UTF8, "application/json");
+            HttpResponseMessage response1 = client.PostAsync(rest, httpContent).Result;
+
+            var result = response1.Content.ReadAsStringAsync().Result.ToString();
+            response obj = JsonConvert.DeserializeObject<response>(result);
+            Console.WriteLine("DEBUG: STATUS: {0}", obj.status);
+            Console.WriteLine("DEBUG: ACCESS: {0}", obj.access);
+
+            if (obj.status.Equals( "ok") && obj.access.Equals("true"))
+            {
+               // m_logger.Info("Status OK" );
+                return new BooleanResult { Success = true};
+            }
+            else
+            {
+               // m_logger.Info("Status Not OK");
+                return new BooleanResult { Success = false };
+            }
+
+        }
+
     }
 }

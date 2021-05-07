@@ -139,6 +139,9 @@ namespace pGina.Plugin.Ldap
             bool doSearch = Settings.Store.DoSearch;
             searchForDnCheckBox.CheckState = doSearch ? CheckState.Checked : CheckState.Unchecked;
 
+            string textBoxAPIReg = (string)Settings.Store.textBoxAPI;
+            textBoxAPI.Text = textBoxAPIReg;
+
             string filter = Settings.Store.SearchFilter;
             searchFilterTextBox.Text = filter;
 
@@ -373,6 +376,7 @@ namespace pGina.Plugin.Ldap
             Settings.Store.UseAuthBindForAuthzAndGateway = (useAuthBindForAuthzAndGatewayCb.CheckState == CheckState.Checked);
             Settings.Store.SearchDN = searchDnTextBox.Text.Trim();
             Settings.Store.SetEncryptedSetting("SearchPW", searchPassTextBox.Text);
+            Settings.Store.textBoxAPI = textBoxAPI.Text.Trim();
 
             // Authentication
             Settings.Store.AllowEmptyPasswords = this.allowEmptyPwCB.Checked;

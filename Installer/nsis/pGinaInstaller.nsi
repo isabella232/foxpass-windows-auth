@@ -10,13 +10,13 @@
 
 !define APPNAME "Foxpass Windows Auth"
 !define VERSION "1.0.0.1"
-!define MyAppPublisher "Foxpass Inc"
+#!define MyAppPublisher "Foxpass Inc"
 
 RequestExecutionLevel admin  ; Require admin rights
 
 Name "${APPNAME} - ${VERSION}"   ; Name in title bar
 OutFile "${APPNAME}-${VERSION}-setup.exe" ; Output file
-Publisher "${MyAppPublisher}" ;
+#Publisher "${MyAppPublisher}" ;
 
 # UI configuration
 !define MUI_ABORTWARNING
@@ -131,7 +131,7 @@ Section ; Run installer script
 SectionEnd
 
 Section  
-CreateShortcut "$DESKTOP\Foxpass.Windows.Auth.lnk" "$INSTDIR\Foxpass.Windows.Auth.exe"
+CreateShortcut "$DESKTOP\Foxpass Windows Login.lnk" "$INSTDIR\Foxpass.Windows.Auth.exe"
 SectionEnd
 
 Section "un.FoxpassWindowsAuth" ; Uninstall pGina
@@ -140,20 +140,15 @@ Section "un.FoxpassWindowsAuth" ; Uninstall pGina
   ${EndIf}
 
   SetOutPath $INSTDIR
+  Delete $INSTDIR\Foxpass.Abstractions.dll
   ExecWait '"$INSTDIR\Foxpass.InstallUtil.exe" post-uninstall'
+   ExecShell "print" "after"
+   Delete $INSTDIR\Plugins\*.dll
   Delete $INSTDIR\*.exe
   Delete $INSTDIR\*.dll
   Delete $INSTDIR\log4net.xml
   Delete $INSTDIR\*.config
   Delete $INSTDIR\*.InstallLog
-
-  # Delete plugins
-  #Drupal
- # Delete $INSTDIR\Plugins\Core\*.dll
- # RmDir $INSTDIR\Plugins\Core
- # Delete $INSTDIR\Plugins\Contrib\*.dll
- # RmDir $INSTDIR\Plugins\Contrib
- Delete $INSTDIR\Plugins\*.dll
   RmDir $INSTDIR\Plugins
 
   ${If} ${AtLeastWin7}
@@ -165,6 +160,17 @@ Section "un.FoxpassWindowsAuth" ; Uninstall pGina
   ${EndIf}
   RmDir $INSTDIR\Win32
   RmDir $INSTDIR\x64
+  
+  ###test
+  ExecShell "print" "end"
+   Delete $INSTDIR\Plugins\*.dll
+  Delete $INSTDIR\*.exe
+  Delete $INSTDIR\*.dll
+  Delete $INSTDIR\log4net.xml
+  Delete $INSTDIR\*.config
+  Delete $INSTDIR\*.InstallLog
+  RmDir $INSTDIR\Plugins
+  
 SectionEnd
 
 Section "un.Delete FoxpassWindowsAuth configuration"

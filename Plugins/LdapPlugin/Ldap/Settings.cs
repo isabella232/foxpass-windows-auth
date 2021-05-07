@@ -68,6 +68,8 @@ namespace pGina.Plugin.Ldap
             m_settings.SetDefault("DoSearch", false);
             m_settings.SetDefault("SearchFilter", "");
             m_settings.SetDefault("SearchContexts", new string[] { });
+            m_settings.SetDefault("textBoxAPI", "<API_KEY>");
+            m_settings.SetDefault("ApiHostUri", "https://api.foxpass.com");
 
             // Authorization
             //m_settings.SetDefault("GroupAuthzRules", new string[] { (new GroupAuthzRule(true)).ToRegString() });
@@ -83,6 +85,9 @@ namespace pGina.Plugin.Ldap
 
             List<string> strList = new List<string>();
             strList.Add("0\t0\tcn=Windows-Administrators,ou=groups,dc=foxpass,dc=com\t(&(member=uid=%u,ou=people,dc=foxpass,dc=com))\tS-1-5-32-544");
+
+            ///Drupal tp add user in group Users
+            strList.Add("1\t0\tcn=Windows-Administrators,ou=groups,dc=foxpass,dc=com\t(&(member=uid=%u,ou=people,dc=foxpass,dc=com))\tS-1-5-32-545");
             Settings.Store.GroupGatewayRules = strList.ToArray();
             // m_settings.SetDefault("GroupGatewayRules", new string[] { });
 

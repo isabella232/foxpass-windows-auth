@@ -5,46 +5,47 @@ Package 'Code Analysis Package' failed to load.
 1>  Abstractions -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Abstractions.dll
 3>------ Rebuild All started: Project: Shared, Configuration: Release Any CPU ------
 2>BinaryReader.cpp
-2>BinaryWriter.cpp
 3>  Shared -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Shared.dll
-2>Helpers.cpp
 4>------ Rebuild All started: Project: Core, Configuration: Release Any CPU ------
 5>------ Rebuild All started: Project: CredentialProviderRegistration, Configuration: Release Any CPU ------
 6>------ Rebuild All started: Project: InstallUtil, Configuration: Release Any CPU ------
-5>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.CSharp.CurrentVersion.targets(135,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset".
-5>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProviderRegistration\Program.cs(59,30,59,31): warning CS0168: The variable 'e' is declared but never used
-5>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProviderRegistration\Program.cs(79,30,79,31): warning CS0168: The variable 'e' is declared but never used
-5>  CredentialProviderRegistration -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.CredentialProvider.Registration.exe
-7>------ Rebuild All started: Project: encryptsetting, Configuration: Release Any CPU ------
-7>  encryptsetting -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\encryptsetting.exe
-6>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\InstallUtility\Program.cs(104,30,104,31): warning CS0168: The variable 'e' is declared but never used
-6>  InstallUtil -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.InstallUtil.exe
 4>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Core\PluginLoader.cs(156,30,156,31): warning CS0168: The variable 'e' is declared but never used
 4>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Core\PluginLoader.cs(220,34,220,36): warning CS0168: The variable 'ex' is declared but never used
 4>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Core\PluginLoader.cs(274,30,274,32): warning CS0168: The variable 'ex' is declared but never used
 4>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Core\PluginLoader.cs(325,30,325,32): warning CS0168: The variable 'ex' is declared but never used
 4>  Core -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Core.dll
-2>pGinaMessages.cpp
-8>------ Rebuild All started: Project: Impl, Configuration: Release Any CPU ------
+7>------ Rebuild All started: Project: Impl, Configuration: Release Any CPU ------
+7>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Impl\Service.cs(163,34,163,35): warning CS0168: The variable 'e' is declared but never used
+7>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Impl\Service.cs(639,30,639,31): warning CS0168: The variable 'e' is declared but never used
+7>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Impl\Service.cs(883,30,883,31): warning CS0168: The variable 'e' is declared but never used
+7>  Impl -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Service.Impl.dll
+5>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.CSharp.CurrentVersion.targets(135,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset".
+5>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProviderRegistration\Program.cs(59,30,59,31): warning CS0168: The variable 'e' is declared but never used
+8>------ Rebuild All started: Project: Console, Configuration: Release Any CPU ------
+5>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProviderRegistration\Program.cs(79,30,79,31): warning CS0168: The variable 'e' is declared but never used
+5>  CredentialProviderRegistration -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.CredentialProvider.Registration.exe
+6>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\InstallUtility\Program.cs(104,30,104,31): warning CS0168: The variable 'e' is declared but never used
+6>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(4674,5): warning MSB3026: Could not copy "G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Shared\log4net.config" to "..\bin\log4net.config". Beginning retry 1 in 1000ms. The process cannot access the file '..\bin\log4net.config' because it is being used by another process. 
+6>  InstallUtil -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.InstallUtil.exe
 9>------ Rebuild All started: Project: Configuration, Configuration: Release Any CPU ------
+10>------ Rebuild All started: Project: Service (Service\Service), Configuration: Release Any CPU ------
+10>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Service\Program.cs(76,34,76,35): warning CS0168: The variable 'e' is declared but never used
+10>  Service -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Windows.Auth.Service.exe
+8>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.CSharp.CurrentVersion.targets(135,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset".
+8>  Console -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Service.Console.exe
+11>------ Rebuild All started: Project: encryptsetting, Configuration: Release Any CPU ------
+11>  encryptsetting -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\encryptsetting.exe
 9>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Configuration\ConfigurationUI.cs(431,34,431,36): warning CS0168: The variable 'ex' is declared but never used
 9>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Configuration\ConfigurationUI.cs(1325,30,1325,31): warning CS0168: The variable 'e' is declared but never used
 9>  Configuration -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Windows.Auth.exe
+2>BinaryWriter.cpp
+2>Helpers.cpp
+2>pGinaMessages.cpp
 2>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 2>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 2>Message.cpp
-8>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Impl\Service.cs(163,34,163,35): warning CS0168: The variable 'e' is declared but never used
-8>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Impl\Service.cs(639,30,639,31): warning CS0168: The variable 'e' is declared but never used
-8>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Impl\Service.cs(883,30,883,31): warning CS0168: The variable 'e' is declared but never used
-8>  Impl -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Service.Impl.dll
 2>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 2>pGinaTransactions.cpp
-10>------ Rebuild All started: Project: Console, Configuration: Release Any CPU ------
-11>------ Rebuild All started: Project: Service (Service\Service), Configuration: Release Any CPU ------
-10>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.CSharp.CurrentVersion.targets(135,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset".
-10>  Console -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Service.Console.exe
-11>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Service\Service\Program.cs(76,34,76,35): warning CS0168: The variable 'e' is declared but never used
-11>  Service -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\bin\Foxpass.Windows.Auth.Service.exe
 2>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 2>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 2>PipeClient.cpp
@@ -55,10 +56,10 @@ Package 'Code Analysis Package' failed to load.
 12>------ Rebuild All started: Project: NativeLibTest, Configuration: Release x64 ------
 13>------ Rebuild All started: Project: CredentialProvider, Configuration: Release x64 ------
 12>NativeLibTest.cpp
+13>ClassFactory.cpp
 12>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 12>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 12>stdafx.cpp
-13>ClassFactory.cpp
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiTypes.h(50,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::PGINA_FIELD_DATA_SOURCE' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
@@ -71,58 +72,58 @@ Package 'Code Analysis Package' failed to load.
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiLogon.h(45,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::LOGON_UI_FIELD_ID' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiUnlock.h(45,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::LOCKED_UI_FIELD_ID' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiChangePassword.h(47,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::CHANGE_PASSWORD_UI_FIELD_ID' when no variable is declared
-12>All 478 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-12>Finished generating code
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\Credential.cpp(408,49): warning C4838: conversion from 'DWORD' to 'int' requires a narrowing conversion
 13>CredentialProviderFilter.cpp
+12>All 478 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+12>Finished generating code
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 13>Dll.cpp
+13>Provider.cpp
 12>NativeLibTest.vcxproj -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\\bin\x64\NativeLibTest.exe
 12>Done building project "NativeLibTest.vcxproj".
 14>------ Rebuild All started: Project: Gina (Gina\Gina), Configuration: Release x64 ------
-13>Provider.cpp
 14>DialogBase.cpp
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiTypes.h(50,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::PGINA_FIELD_DATA_SOURCE' when no variable is declared
-14>DialogLoggedOutSAS.cpp
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiLogon.h(45,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::LOGON_UI_FIELD_ID' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiUnlock.h(45,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::LOCKED_UI_FIELD_ID' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiChangePassword.h(47,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::CHANGE_PASSWORD_UI_FIELD_ID' when no variable is declared
 13>ProviderGuid.cpp
 13>SerializationHelpers.cpp
+14>DialogLoggedOutSAS.cpp
+13>ServiceStateHelper.cpp
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Gina\Gina\DialogLoggedOutSAS.h(64): warning C4091: 'typedef ': ignored on left of 'pGina::GINA::DialogLoggedOutSAS::DialogResult' when no variable is declared
 14>Dll.cpp
-13>ServiceStateHelper.cpp
 14>Gina.cpp
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 13>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\CredentialProvider\TileUiTypes.h(50,4): warning C4091: 'typedef ': ignored on left of 'pGina::CredProv::PGINA_FIELD_DATA_SOURCE' when no variable is declared
 14>GinaChain.cpp
+13>   Creating library G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\\bin\x64\FoxpassCredentialProvider.lib and object G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\\bin\x64\FoxpassCredentialProvider.exp
+13>Generating code
+13>Previous IPDB not found, fall back to full compilation.
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Gina\Gina\DialogLoggedOutSAS.h(64): warning C4091: 'typedef ': ignored on left of 'pGina::GINA::DialogLoggedOutSAS::DialogResult' when no variable is declared
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Gina\Gina\GinaChain.cpp(301,33): warning C4311: 'type cast': pointer truncation from 'LPWSTR' to 'DWORD'
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Gina\Gina\GinaChain.cpp(301,33): warning C4302: 'type cast': truncation from 'LPWSTR' to 'DWORD'
 14>GinaExports.cpp
-13>   Creating library G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\\bin\x64\FoxpassCredentialProvider.lib and object G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\\bin\x64\FoxpassCredentialProvider.exp
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
-13>Generating code
 14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
-13>Previous IPDB not found, fall back to full compilation.
 14>GinaWrapper.cpp
-14>HookedLoggedOutSAS.cpp
-14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
 13>All 905 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
 13>Finished generating code
-14>Themes.cpp
-14>Winlogon.cpp
 13>CredentialProvider.vcxproj -> G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\\bin\x64\FoxpassCredentialProvider.dll
 13>Done building project "CredentialProvider.vcxproj".
+14>HookedLoggedOutSAS.cpp
+14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\MessageProperty.h(43,4): warning C4091: 'typedef ': ignored on left of 'pGina::Messaging::PropertyType' when no variable is declared
+14>G:\Foxpass\pgina-3.9.9.12\pgina-3.9.9.12\pGina\src\Lib\pGinaMessages.h(55,4): warning C4091: 'typedef ': ignored on left of 'pGina::Protocol::MessageType' when no variable is declared
+14>Themes.cpp
+14>Winlogon.cpp
 14>WinlogonDebug.cpp
 14>WinlogonReal.cpp
 14>WinlogonRouter.cpp
