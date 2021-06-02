@@ -1079,7 +1079,7 @@ namespace Abstractions.WindowsApi
             {
                 string errorMessage = LastError();
                 LibraryLogging.Error("Unable to allocate memory for service action, error: {0}", errorMessage);
-                EventLog.WriteEntry("pGina", String.Format("Unable to allocate memory for service action\nerror:{0}", errorMessage), EventLogEntryType.Warning);
+                EventLog.WriteEntry("Foxpass Windows Auth", String.Format("Unable to allocate memory for service action\nerror:{0}", errorMessage), EventLogEntryType.Warning);
 
                 return false;
             }
@@ -1090,7 +1090,7 @@ namespace Abstractions.WindowsApi
                 {
                     string errorMessage = LastError();
                     LibraryLogging.Error("ChangeServiceConfig2 error: {0}", errorMessage);
-                    EventLog.WriteEntry("pGina", String.Format("ChangeServiceConfig2\nThe service will be forced to stop during a shutdown within 3 minutes\nerror:{0}", errorMessage), EventLogEntryType.Warning);
+                    EventLog.WriteEntry("Foxpass Windows Auth", String.Format("ChangeServiceConfig2\nThe service will be forced to stop during a shutdown within 3 minutes\nerror:{0}", errorMessage), EventLogEntryType.Warning);
 
                     return false;
                 }

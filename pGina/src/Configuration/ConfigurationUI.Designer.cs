@@ -1359,7 +1359,7 @@
 			this.groupBox10.Size = new System.Drawing.Size(133, 112);
 			this.groupBox10.TabIndex = 3;
 			this.groupBox10.TabStop = false;
-			this.groupBox10.Text = "pGina Stages";
+			this.groupBox10.Text = "Foxpass Windows Auth Stages";
 			// 
 			// simGatewayResultPB
 			// 
@@ -1606,7 +1606,7 @@
 			this.m_radioEmulate.Size = new System.Drawing.Size(133, 17);
 			this.m_radioEmulate.TabIndex = 1;
 			this.m_radioEmulate.TabStop = true;
-			this.m_radioEmulate.Text = "Emulate pGina Service";
+			this.m_radioEmulate.Text = "Emulate Foxpass Windows Auth Service";
 			this.m_radioEmulate.UseVisualStyleBackColor = true;
 			this.m_radioEmulate.CheckedChanged += new System.EventHandler(this.simMethodChanged);
 			// 
@@ -1617,7 +1617,7 @@
 			this.m_radioUseService.Name = "m_radioUseService";
 			this.m_radioUseService.Size = new System.Drawing.Size(114, 17);
 			this.m_radioUseService.TabIndex = 0;
-			this.m_radioUseService.Text = "Use pGina Service";
+			this.m_radioUseService.Text = "Use Foxpass Windows Auth Service";
 			this.m_radioUseService.UseVisualStyleBackColor = true;
 			this.m_radioUseService.CheckedChanged += new System.EventHandler(this.simMethodChanged);
 			// 
@@ -1651,7 +1651,7 @@
 			this.m_pginaVersionLbl.Name = "m_pginaVersionLbl";
 			this.m_pginaVersionLbl.Size = new System.Drawing.Size(72, 13);
 			this.m_pginaVersionLbl.TabIndex = 1;
-			this.m_pginaVersionLbl.Text = "pGina version";
+			this.m_pginaVersionLbl.Text = "Foxpass Windows Auth version";
 			this.m_pginaVersionLbl.Visible = false;
 			// 
 			// btnSaveAndClose

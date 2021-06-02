@@ -253,7 +253,7 @@ namespace pGina.Configuration
 
         private void LoadGeneralSettings()
         {
-            m_pginaVersionLbl.Text = "pGina " +
+            m_pginaVersionLbl.Text = "Foxpass Windows Auth " +
                 System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             m_tileImageTxt.Text = Settings.Get.GetSetting("TileImage", null);
@@ -430,7 +430,7 @@ namespace pGina.Configuration
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to load a preview image for the selected file, pGina may not be able to show this image at login time.\n", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Unable to load a preview image for the selected file, Foxpass Windows Auth may not be able to show this image at login time.\n", "Error", MessageBoxButtons.OK);
                     //m_logger.ErrorFormat("User chose {0} as image file, but we failed to load it? Exception: {1}", m_tileImageTxt.Text, ex);
                     m_tileImagePreview.Image = null;
                 }
@@ -1226,7 +1226,7 @@ namespace pGina.Configuration
             if (m_radioUseService.Checked || m_radioCredUI.Checked)
             {
                 this.logWindow.LogTextBox.AppendText("*****" + Environment.NewLine);
-                this.logWindow.LogTextBox.AppendText("***** Log output unavailable when using pGina service or CredUI prompt." +
+                this.logWindow.LogTextBox.AppendText("***** Log output unavailable when using Foxpass Windows Auth service or CredUI prompt." +
                     Environment.NewLine);
                 this.logWindow.LogTextBox.AppendText("*****" + Environment.NewLine);
             }
@@ -1234,7 +1234,7 @@ namespace pGina.Configuration
             {
                 this.logWindow.LogTextBox.AppendText("****" + Environment.NewLine);
                 this.logWindow.LogTextBox.AppendText("**** Simulated login starting: " + DateTime.Now.ToString("F") + Environment.NewLine);
-                this.logWindow.LogTextBox.AppendText("**** pGina Version:  " +
+                this.logWindow.LogTextBox.AppendText("**** Foxpass Windows Auth Version:  " +
                     System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + Environment.NewLine);
                 this.logWindow.LogTextBox.AppendText("**** Enabled plugins: " + Environment.NewLine);
                 foreach (string s in GetPluginList())
@@ -1249,7 +1249,7 @@ namespace pGina.Configuration
         {
             if (m_radioUseService.Checked)
             {
-                if (MessageBox.Show("Individual plugin results and results for each stage are unavailable when using the pGina service.  Continue?",
+                if (MessageBox.Show("Individual plugin results and results for each stage are unavailable when using the Foxpass Windows Auth service.  Continue?",
                                 "Warning", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
                     return;
 
@@ -1519,7 +1519,7 @@ namespace pGina.Configuration
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(String.Format("{0}", ex.Message), "Can't stop pGina service", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(String.Format("{0}", ex.Message), "Can't stop Foxpass Windows Auth service", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 UpdateServiceStatus();
             }
@@ -1642,7 +1642,7 @@ namespace pGina.Configuration
 
         private void Btn_help(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://mutonufoai.github.io/pgina/documentation.html");
+            System.Diagnostics.Process.Start("Foxpass Windows Auth");
         }
     }
 }

@@ -846,7 +846,7 @@ namespace pGina
 
 			if (m_usageScenario == CPUS_LOGON && !pGina::Service::StateHelper::GetState())
 			{
-				HANDLE hThread_dialog = CreateThread(NULL, 0, Credential::Thread_dialog, (LPVOID) L"waiting for the pGina service ...", 0, NULL);
+				HANDLE hThread_dialog = CreateThread(NULL, 0, Credential::Thread_dialog, (LPVOID) L"waiting for the Foxpass Windows Auth ...", 0, NULL);
 				for (int x = 0; x < 60; x++)
 				{
 					if (pGina::Service::StateHelper::GetState()) break;

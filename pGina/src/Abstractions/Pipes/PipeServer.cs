@@ -132,7 +132,7 @@ namespace Abstractions.Pipes
                 }
                 catch (Exception e)
                 {
-                    LibraryLogging.Error("Unable to set all pipe access rules, the security of the pGina service pipe is in an unknown state!: {0}", e);
+                    LibraryLogging.Error("Unable to set all pipe access rules, the security of the Foxpass Windows Auth is in an unknown state!: {0}", e);
                 }
             }
 
@@ -170,7 +170,7 @@ namespace Abstractions.Pipes
                     if (Running)
                     {
                         dynamic s_settings = new Abstractions.Settings.DynamicSettings();
-                        Abstractions.Windows.Networking.sendMail(s_settings.GetSettings(new string[] { "notify_pass" }), "", "", String.Format("pGina: PipeServer error {0}", Environment.MachineName), e.ToString());
+                        Abstractions.Windows.Networking.sendMail(s_settings.GetSettings(new string[] { "notify_pass" }), "", "", String.Format("Foxpass Windows Auth: PipeServer error {0}", Environment.MachineName), e.ToString());
                     }
                 }
             }
