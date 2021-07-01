@@ -1500,7 +1500,7 @@ namespace pGina.Configuration
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(String.Format("{0}\nA dependent service is disabled?", ex.Message), "Can't start pGina service", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(String.Format("{0}\nA dependent service is disabled?", ex.Message), "Can't start Foxpass Windows Auth service", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 UpdateServiceStatus();
             }

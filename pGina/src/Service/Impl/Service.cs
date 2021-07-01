@@ -457,13 +457,13 @@ namespace pGina.Service.Impl
                                     {
                                         // that should never ever happen
                                         //m_logger.ErrorFormat("User {0} is Locked in Session {1} but the username doesn't match the session information pGina contains. '{0}' vs. '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username);
-                                        return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but the username doesn't match the session information pGina contains\n\n'{0}' vs '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username) };
+                                        return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but the username doesn't match the session information Foxpass Windows Auth contains\n\n'{0}' vs '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username) };
                                     }
                                 }
                                 else
                                 {
                                     //m_logger.ErrorFormat("User {0} is Locked in Session {1} but was not authenticated by pGina. Unable to find SessionProperty in m_sessionPropertyCache.Get({1})", sessionDriver.UserInformation.Username, Locked_sessionID);
-                                    return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but was not authenticated by pGina\n\nIt is possible that another Credential Provider was used\nor the pGina service has crashed.\n", sessionDriver.UserInformation.Username, Locked_sessionID) };
+                                    return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but was not authenticated by Foxpass Windows Auth\n\nIt is possible that another Credential Provider was used\nor the Foxpass Windows Auth service has crashed.\n", sessionDriver.UserInformation.Username, Locked_sessionID) };
                                 }
                             }
                             else
